@@ -5,52 +5,26 @@
 
 int dig = 4;
 int num;
-
 Console.WriteLine("Please enter five-digit number ");
-int.TryParse(Console.ReadLine(), out num);
-
-//CheckText(num);
-//int numcheck = num;
-
-
-
-
-
-
-
-
-//CheckText(num);
-
-//CheckDig(num);
-
-
-
-
-
-void InputNum(int num)
-{
-    int.TryParse(Console.ReadLine(), out num);
-}
-
-
-
-
-
-
-
-void CheckText(int num)
-{
-        while (!int.TryParse(Console.ReadLine(), out num))
+    while (!int.TryParse(Console.ReadLine(), out num))
     {
     Console.WriteLine("This is not number! Please enter fiwe-digit number");
     }
-}  
-  
-void CheckDig(int num)   
+
+if ((int)Math.Log10(num) == dig)
 {
-    while ((int) Math.Log10(num) != dig)
+    int a = num / 10000, a1 = num % 10,  
+    b = num / 1000 % 10, b1 = num / 10 % 10;
+    if (a == a1 && b == b1)
     {
-    Console.WriteLine("This is not fiwe-digit number! Please enter fiwe-digit number");
-    InputNum(num);
+                Console.WriteLine("It's a palindrome!");
     }
+    else 
+    {
+                Console.WriteLine("It's not a palindrome!");
+    }
+}
+else 
+{
+    Console.WriteLine("This is not fiwe-digit number!");
 }
