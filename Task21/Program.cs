@@ -20,6 +20,12 @@ double lgth =  Math.Round(sqrt, 2); // округление до 2-х знако
 Console.WriteLine($"Distance between points: {lgth}");
 
 
+
+
+
+
+
+
 void ChekX1Y1Z1()
 {
     while (!int.TryParse(Console.ReadLine(), out x1))
