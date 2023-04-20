@@ -5,11 +5,12 @@
 
 int num;
 int lgth = 0;
-Console.WriteLine("Please enter five-digit number ");
-    while (!int.TryParse(Console.ReadLine(), out num))
-    {
-    Console.WriteLine("This is not number! Please enter fiwe-digit number");
-    }
+//Console.WriteLine("Please enter five-digit number ");
+// Enter:
+//     while (!int.TryParse(Console.ReadLine(), out num))
+//     {
+//     Console.WriteLine("This is not number! Please enter fiwe-digit number");
+//     }
 
 CheckFiveDiget();
 
@@ -27,19 +28,28 @@ CheckFiveDiget();
 
 void CheckFiveDiget()
 {
-    do 
+    Console.WriteLine("Please enter five-digit number ");
+Ent:
+    while (!int.TryParse(Console.ReadLine(), out num))
+    {
+    Console.WriteLine("This is not number! Please enter fiwe-digit number");
+    }
+    do
     {
         lgth = (int) Math.Log10(num);
         if (lgth != 4)
-        {Console.WriteLine("It's not five-digits number! Please enter fiwe-digit number!");
-        int num = int.TryParse(Console.ReadLine(), out num);
+        {
+        Console.WriteLine("It's not five-digits number! Please enter fiwe-digit number!");
+        goto Ent;
+        //int.TryParse(Console.ReadLine(), out num);
         }
-           
-            while (!int.TryParse(Console.ReadLine(), out num))
-            {
-            Console.WriteLine("This is not number! Please enter fiwe-digit number");
-            }
-          
+        // else
+        // {   
+        //     while (!int.TryParse(Console.ReadLine(), out num))
+        //     {
+        //     Console.WriteLine("This is not number! Please enter fiwe-digit number");
+        //     }
+        // }  
     }
     while (lgth != 4);
 }
